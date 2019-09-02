@@ -1,0 +1,11 @@
+{
+  "development":{  
+     "host": "",
+     "spaceId": "",
+     "accessToken": ""
+  },
+  "production": {
+    "spaceId": "",
+    "accessToken": ""
+  }
+}
