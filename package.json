@@ -1,7 +1,7 @@
 {
-  "name": "adaptivei-v4",
+  "name": "adaptivei",
   "private": true,
-  "description": "AAdaptive Integration is a security and network focused reseller, partnered with the most cutting edge and disruptive technologies.",
+  "description": "Adaptive Integration is a security and network focused reseller, partnered with the most cutting edge and disruptive technologies.",
   "version": "2.0.0",
   "author": "Ryan Washburne",
   "dependencies": {
@@ -49,7 +49,7 @@
     "develop": "gatsby develop",
     "start": "run-p start:**",
     "start:app": "npm run develop",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
     "build": "run-p build:**",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build src/lambda"

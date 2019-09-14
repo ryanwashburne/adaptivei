@@ -1,13 +1,11 @@
 import netlifyIdentity from 'netlify-identity-widget'
-
+import authFetch from './auth-fetch'
 import GoTrue from 'gotrue-js'
 const auth = new GoTrue({
-  APIUrl: 'https://adaptivei-v4.netlify.com/.netlify/identity',
+  APIUrl: '/.netlify/identity',
   audience: '',
   setCookie: false
 })
-
-
 
 export const isBrowser = () => typeof window !== 'undefined'
 export const initAuth = () => {
@@ -75,12 +73,10 @@ export const updateUser = async attributes => {
 }
 export const deleteUser = async () => {
   try {
-    const user = getUser()
-    await fetch('/.netlify/functions/delete-user', {
+    await authFetch('/.netlify/functions/delete-user', {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer " + user.token.access_token,
       },
     })
     netlifyIdentity.logout()
