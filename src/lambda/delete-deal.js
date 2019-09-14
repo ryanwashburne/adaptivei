@@ -6,7 +6,6 @@ const client = new NetlifyAPI(apiKey);
 
 export const deleteDeal = async (event) => {
   try {
-    console.log(event.body)
     const data = JSON.parse(event.body);
     const submissionId = data.submissionId;
     await client.deleteSubmission({

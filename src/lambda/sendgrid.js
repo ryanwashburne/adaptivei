@@ -55,7 +55,7 @@ exports.handler = async (event, context) => authorize(context.clientContext.user
       // delete the deal after approved
       await deleteDeal({
         body: JSON.stringify({
-          id: data.id,
+          submissionId: data.id,
         }),
       });
 
