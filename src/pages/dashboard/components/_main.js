@@ -11,7 +11,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 
 export default props => {
-  const data = props.user.app_metadata
+  const data = props.user ? props.user.app_metadata : {}
   return (
     <Layout title="Dashboard">
       <Box container flexGrow={1} my={6} mx={{ xs: 2, md: 6 }}>
