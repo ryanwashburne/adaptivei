@@ -30,7 +30,7 @@ export default ({ user }) => {
           id: data.id,
         }),
       })
-      alert('Ok')
+      window.location.reload()
     } catch(e) {
       console.error(e)
     }

@@ -13,11 +13,19 @@ export const initAuth = () => {
     window.netlifyIdentity = netlifyIdentity
     netlifyIdentity.init()
   }
+  const user = getUser()
+  if (user && user.token && user.token.expires_at) {
+    const expiry = user.token.expires_at
+    const now = new Date().getTime() / 1000
+    if (expiry < now) {
+      alert('expired')
+    }
+  }
 }
 export const getUser = () => {
   if (isBrowser() && window.localStorage.getItem('netlifyUser')) {
     const user = JSON.parse(window.localStorage.getItem('netlifyUser'))
-    if (!user.email) {
+    if (!user || !user.email) {
       const newUser = netlifyIdentity.currentUser()
       setUser(newUser)
       return newUser
