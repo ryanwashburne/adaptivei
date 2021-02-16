@@ -2,8 +2,8 @@ import { authorize } from '../lambda_helpers';
 import { deleteDeal } from './delete-deal';
 import fetch from "node-fetch";
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const apiKey = process.env.REACT_APP_SENDGRID_ACCESS_TOKEN;
-const templateId = process.env.REACT_APP_SENDGRID_TEMPLATE;
+const apiKey = process.env.SENDGRID_ACCESS_TOKEN;
+const templateId = process.env.SENDGRID_TEMPLATE;
 
 function getDate() {
   var today = new Date();

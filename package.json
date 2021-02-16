@@ -46,6 +46,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "dev": "doppler run -- yarn develop",
     "develop": "gatsby develop",
     "start": "run-p start:**",
     "start:app": "npm run develop",

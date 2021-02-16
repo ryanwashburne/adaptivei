@@ -1,8 +1,8 @@
 import { authorize } from '../lambda_helpers';
 import NetlifyAPI from 'netlify';
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const formId = process.env.REACT_APP_SENDGRID_FORM_ID;
-const apiKey = process.env.REACT_APP_NETLIFY_ACCESS_TOKEN;
+const formId = process.env.SENDGRID_FORM_ID;
+const apiKey = process.env.NETLIFY_ACCESS_TOKEN;
 const client = new NetlifyAPI(apiKey);
 
 exports.handler = async (event, context) => authorize(context.clientContext.user, async () => {

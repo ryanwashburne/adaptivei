@@ -1,7 +1,7 @@
 import { authorize } from '../lambda_helpers';
 import NetlifyAPI from 'netlify';
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
-const apiKey = process.env.REACT_APP_NETLIFY_ACCESS_TOKEN;
+const apiKey = process.env.NETLIFY_ACCESS_TOKEN;
 const client = new NetlifyAPI(apiKey);
 
 export const deleteDeal = async (event) => {
