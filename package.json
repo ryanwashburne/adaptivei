@@ -50,7 +50,7 @@
     "start": "run-p start:**",
     "start:app": "npm run develop",
     "start:lambda": "NODE_ENV=development netlify-lambda serve src/lambda",
-    "build": "doppler run -- run-s build:**",
+    "build": "run-s build:**",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build src/lambda"
   },
